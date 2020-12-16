@@ -1,0 +1,26 @@
+gir=str(input())
+req=['1','2','3','4','5','6','7','8','9','0']
+eds=[]
+
+
+#*******************STRING TIPINDE OLAN EDEDLERI TAPIRIQ VE EDS MASSIVINE ELAVE EDIRIK*****************
+for i in range(len(gir)):
+    for j in range(len(req)):
+        if gir[i] == req[j]:
+            eds.append(gir[i])
+
+print(eds)
+eded=0
+
+#***********EDEDLERI STRING TIPINDEN INT TIPINE KECHIR*****************
+for i in range(len(eds)):
+    eds[i]=int(eds[i])
+print(eds)
+
+#***********SON EDEDI ALMAQ UCHUN MAKSIMUM EDEDI TAPIB, ONU UYGUN MERTEBEYE YUKSELDIB EDED UZERINE ELAVE EDIRIK*****************
+
+for i in range(len(eds)):
+    eded+=max(eds)*pow(10,len(eds)-1)
+    eds.remove(max(eds))
+
+print(eded)
